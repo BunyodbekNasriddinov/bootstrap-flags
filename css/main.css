@@ -1,3 +1,21 @@
+:root {
+  --main-bg-color: #f2f2f2;
+  --main-bg-color-light: #ffffff;
+  --main-text-color: #111517;
+}
+
+[data-theme="dark"] .mode {
+  --main-bg-color: #202c36;
+  --main-bg-color-light: #2b3844;
+  --main-text-color: #ffffff;
+}
+
+.mode {
+  --main-bg-color: #202c36;
+  --main-bg-color-light: #2b3844;
+  --main-text-color: #ffffff;
+}
+
 html {
   height: 100%;
   scroll-behavior: smooth;
@@ -12,6 +30,7 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0;
+  background-color: var(--main-bg-color);
 }
 main {
   flex-grow: 1;
@@ -31,8 +50,59 @@ img {
   width: 1px;
 }
 
-img:hover {
-  transition: all 0.8s ease;
-  transform: scale(1.2);
-  filter: brightness(0.6);
+.site-header {
+  background-color: var(--main-bg-color-light);
+}
+
+.site-header__inner h2 {
+  color: var(--main-text-color);
+}
+
+.mode-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--main-text-color);
+}
+
+.mode-btn::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  background-image: url("../images/mode-moon.svg");
+  background-repeat: no-repeat;
+}
+
+input {
+  background: var(--main-bg-color-light);
+}
+
+/* .search-input::placeholder {
+  color: var(--main-text-color);
+} */
+
+.search-input::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 24px;
+  background-image: url("../images/icon-search-black.svg");
+  background-repeat: no-repeat;
+}
+
+.form-select {
+  background-color: var(--main-bg-color-light);
+}
+
+.card {
+  background-color: var(--main-bg-color-light);
+}
+
+.card-body h2,
+.card-body p {
+  color: var(--main-text-color);
 }
